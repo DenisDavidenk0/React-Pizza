@@ -1,0 +1,33 @@
+/* .containerProduct {
+} */
+
+.imgProduct {
+  width: 250.12px;
+  height: 260px;
+}
+
+.titleProduct {
+  font-family: "Montserrat", sans-serif;
+  size: 20px;
+  text-align: center;
+}
+
+.containerSizes {
+  border-radius: 10px;
+  background-color: #f3f3f3;
+  height: 42.5px;
+  width: 280px;
+}
+
+.productButtonSize {
+  background-color: transparent;
+  /* background-color: #ffffff; */
+  border-radius: 5px;
+  color: #2c2c2c;
+  width: 86px;
+  height: 32px;
+}
+
+/* .productButtonSize:focus {
+  background-color: #ffffff;
+} */

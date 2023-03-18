@@ -1,0 +1,47 @@
+.containerHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 77px 54px;
+}
+
+.buttonHeaderBasket {
+  width: 150px;
+  height: 50px;
+  background-color: #fe5f1e;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dividingLine {
+  width: 1px;
+  margin: auto 0;
+  height: 50%;
+  background-color: #ffffff;
+  opacity: 25%;
+}
+.buttonReset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  /* Устанавливает transparent для цвета фона.*/
+  cursor: pointer;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 500;
+  font-family: "Anonymous Pro", monospace;
+  width: 49%;
+}
+
+.titleHeader {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+.description {
+  font-family: "Roboto Mono", monospace;
+  font-size: 16px;
+}
