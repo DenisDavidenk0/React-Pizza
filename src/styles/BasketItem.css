@@ -1,0 +1,99 @@
+.containerBasketItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.BasketItemTitlePizza {
+  margin-bottom: 5px;
+  font-family: "Anonymous Pro", monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  /* identical to box height */
+
+  letter-spacing: 0.01em;
+}
+
+.BasketItemSizePizza {
+  color: #8d8d8d;
+  font-style: normal;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+
+  letter-spacing: 0.01em;
+}
+
+.containerSizeAdjustment {
+  display: flex;
+  /* margin-left: 60px; */
+  font-size: 22px;
+}
+.resizeButtonPlus {
+  width: 32px;
+  height: 32px;
+
+  color: #fe5f1e;
+
+  background: #ffffff;
+  border: 2px solid #fe5f1e;
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.resizeButtonMinus {
+  width: 32px;
+  height: 32px;
+
+  color: #fe5f1e;
+
+  background: #ffffff;
+  border: 2px solid #fe5f1e;
+  border-radius: 50%;
+}
+
+.informationAboutTheNumberOfPizzas {
+  font-family: "Roboto Mono", monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  /* identical to box height */
+
+  letter-spacing: 0.01em;
+
+  color: #000000;
+  margin: 0 12px;
+}
+
+.BasketDividingLine {
+  height: 1px;
+  margin: auto;
+  width: 45%;
+  background-color: #eb5a1e;
+}
+
+.BasketItemPrice {
+  font-family: "Roboto Mono", monospace;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  /* identical to box height */
+
+  letter-spacing: 0.01em;
+
+  color: #000000;
+}
+
+.deleteItem {
+  background: #ffffff;
+  border: 2px solid #d7d7d7;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 22px;
+}

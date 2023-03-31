@@ -1,20 +1,20 @@
 import "../src/styles/mainContainer.css";
-import Header from "./components/Header";
+
 import Products from "./components/Products";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import Basket from "./components/static/Basket";
 
 function App() {
   return (
     <div className="mainContainer">
-      <Header />
-      <Products />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Products />} />
+          <Route path="/basket" element={<Basket />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
-
-// <div className="styleReset">
-// <div className="mainContainer">
-//   <Header />
-// </div>
-// </div>

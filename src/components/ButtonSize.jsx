@@ -4,7 +4,11 @@ function ButtonSize({ pizzaSize, productSizes }) {
   return (
     <button
       disabled={!productSizes.includes(pizzaSize)}
-      className="productButtonSize"
+      className={
+        !productSizes.includes(pizzaSize)
+          ? "disableDproductButtonSize"
+          : "productButtonSize"
+      }
     >
       {pizzaSize} см.
     </button>

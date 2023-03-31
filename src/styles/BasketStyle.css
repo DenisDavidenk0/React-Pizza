@@ -1,0 +1,97 @@
+.containerHeaderBasket {
+  min-height: 1100px;
+}
+
+.verticalDividingLine {
+  height: 1px;
+  margin: auto 0;
+  width: 100%;
+  background-color: #f3f3f3;
+}
+
+.mainContainerBasket {
+  padding: 100px 300px;
+}
+.mainHeaderContainerBasket {
+  display: flex;
+  justify-content: space-between;
+}
+
+.basketTextSteel {
+  font-size: 32px;
+  font-family: "Anonymous Pro", monospace;
+  margin-left: 19px;
+}
+
+.containerButtonDeletedItem {
+  display: flex;
+  height: 17px;
+}
+
+.buttonDeletedItem {
+  background-color: transparent;
+  font-family: "Anonymous Pro", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin-left: 11px;
+}
+
+.BasketInfoPanel {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Anonymous Pro", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 27px;
+  /* identical to box height */
+
+  letter-spacing: 0.01em;
+  margin-bottom: 40px;
+}
+
+.containerButtonGoingBack {
+  background: #ffffff;
+  border: 1px solid #d3d3d3;
+  border-radius: 30px;
+  width: 211px;
+  height: 55px;
+}
+
+.textButtonGoingBack {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+
+  color: #cacaca;
+}
+.containerButtonOrderPayment {
+  width: 211px;
+  height: 55px;
+  left: 960px;
+  top: 844px;
+  background-color: #ffffff;
+
+  border: 1px solid #eb5a1e;
+  border-radius: 30px;
+}
+.textButtonOrderPayment {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+
+  color: #fe5f1e;
+}
+
+.containerButtonOrderPayment:hover {
+  background: #fe5f1e;
+  border: 1px solid #fe5f1e;
+  border-radius: 30px;
+  color: #ffffff;
+}
