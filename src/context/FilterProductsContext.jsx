@@ -11,23 +11,14 @@ function FilterProductsProvider({ children }) {
   const [basket, setBasket] = useState([]);
   const [totalBasketSum, setTotalBasketSum] = useState(0);
 
-  useEffect(() => {
-    setTotalBasketSum(
-      basket.reduce(
-        (acc, basketProduct) => acc + basketProduct.price * basketProduct.count,
-        0
-      )
-    );
-  }, [basket]);
-
   const addProductToBasket = (productId) => {
-    if (basket.find((el) => el.id === productId)) {
-      setBasket(
-        ...basket.map((el) => {
-          if (el.id !== productId) return el;
-          return { ...el, count: el.count + 1 };
-        })
-      );
+    if (basket?.find((el) => el.id === productId)) {
+      // setBasket(
+      //   ...basket.map((el) => {
+      //     if (el.id !== productId) return el;
+      //     return { ...el, count: el.count + 1 };
+      //   })
+      // );
     } else {
       const product = products.find((el) => el.id === productId);
       product.count = 1;
@@ -56,6 +47,21 @@ function FilterProductsProvider({ children }) {
     setBasket([...basket]);
   };
 
+  function EmptyTrash() {
+    basket.length = [];
+    setBasket([...basket]);
+  }
+
+  useEffect(() => {
+    setTotalBasketSum(
+      basket?.reduce(
+        (acc, basketProduct) =>
+          acc + basketProduct?.price * basketProduct?.count,
+        0
+      )
+    );
+  }, [basket]);
+
   return (
     <FilterProductsContext.Provider
       value={{
@@ -67,6 +73,7 @@ function FilterProductsProvider({ children }) {
         addProductToBasket,
         removeProductFromBasket,
         basketOperation,
+        EmptyTrash,
       }}
     >
       {children}

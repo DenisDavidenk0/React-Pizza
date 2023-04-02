@@ -4,9 +4,8 @@ import { FilterProductsContext } from "../context/FilterProductsContext";
 import "../styles/BasketItem.css";
 
 function BasketItem({ product, id }) {
-  const { addProductToBasket, basketOperation } = useContext(
-    FilterProductsContext
-  );
+  const { addProductToBasket, basketOperation, removeProductFromBasket } =
+    useContext(FilterProductsContext);
 
   return (
     <>
@@ -25,6 +24,7 @@ function BasketItem({ product, id }) {
         <div className="containerSizeAdjustment">
           <button
             className="resizeButtonMinus"
+            disabled={product.count === 1}
             onClick={() => basketOperation(id, false)}
           >
             <div className="BasketDividingLine" />
@@ -40,9 +40,14 @@ function BasketItem({ product, id }) {
           </button>
         </div>
         <h2 className="BasketItemPrice">{product.price * product.count}</h2>
-        {/* <h2 className="BasketItemPrice"></h2> */}
+
         <button className="deleteItem">
-          <span style={{ color: "#D0D0D0", width: "10px" }}>×</span>
+          <span
+            onClick={() => removeProductFromBasket(product)}
+            style={{ color: "#D0D0D0", width: "10px" }}
+          >
+            ×
+          </span>
         </button>
       </div>
       <div style={{ margin: "30px 0" }} className="verticalDividingLine" />

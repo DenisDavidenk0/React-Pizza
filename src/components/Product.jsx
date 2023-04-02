@@ -1,10 +1,11 @@
+import { ConstructionOutlined } from "@mui/icons-material";
 import { useContext, useMemo } from "react";
 import { FilterProductsContext } from "../context/FilterProductsContext";
 import "../styles/Product.css";
 import ButtonSize from "./ButtonSize";
 
 function Product({ product, allPizzaSizes }) {
-  const { addProductToBasket } = useContext(FilterProductsContext);
+  const { addProductToBasket, basket } = useContext(FilterProductsContext);
 
   return (
     <>
@@ -33,6 +34,7 @@ function Product({ product, allPizzaSizes }) {
               <span onClick={() => addProductToBasket(product.id)}>
                 Добавить
               </span>
+              <span></span>
             </div>
           </button>
         </div>
