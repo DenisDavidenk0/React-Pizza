@@ -1,4 +1,5 @@
 import { ConstructionOutlined } from "@mui/icons-material";
+import { compose } from "@mui/system";
 import { useContext, useMemo } from "react";
 import { FilterProductsContext } from "../context/FilterProductsContext";
 import "../styles/Product.css";
@@ -28,13 +29,20 @@ function Product({ product, allPizzaSizes }) {
         </div>
         <div className="containerPrice">
           <div className="productPrice"> от: {product.price} ₴</div>
-          <button className="productBtnAddCard">
+          <button
+            onClick={() => addProductToBasket(product.id)}
+            className="productBtnAddCard"
+          >
             <div className="containerBtnAddCard">
-              <h1 style={{ fontSize: "25px", fontWeight: 700 }}>+</h1>
-              <span onClick={() => addProductToBasket(product.id)}>
-                Добавить
-              </span>
-              <span></span>
+              <span style={{ fontSize: "25px", fontWeight: 700 }}>+</span>
+              <span style={{ margin: "0 5px" }}>Добавить</span>
+              {product?.count ? (
+                <span className="containerProductCount">{product?.count}</span>
+              ) : (
+                ""
+              )}
+
+              {/* <span className="productCount"></span> */}
             </div>
           </button>
         </div>
