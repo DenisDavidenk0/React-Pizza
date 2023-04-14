@@ -1,12 +1,16 @@
 import { ConstructionOutlined } from "@mui/icons-material";
 import { compose } from "@mui/system";
-import { useContext, useMemo } from "react";
+import { useContext, useMemo, useState } from "react";
 import { FilterProductsContext } from "../context/FilterProductsContext";
 import "../styles/Product.css";
 import ButtonSize from "./ButtonSize";
 
 function Product({ product, allPizzaSizes }) {
-  const { addProductToBasket, basket } = useContext(FilterProductsContext);
+  const { addProductToBasket, basket, SelectionSizePizza } = useContext(
+    FilterProductsContext
+  );
+
+  const [pizzaSize, setPizzaSize] = useState();
 
   return (
     <>
@@ -18,8 +22,9 @@ function Product({ product, allPizzaSizes }) {
         <h3 className="titleProduct">{product.title}</h3>
         <div className="containerSizes">
           <div style={{ padding: "5.73px" }}>
-            {allPizzaSizes.map((pizzaSize, id) => (
+            {allPizzaSizes?.map((pizzaSize, id) => (
               <ButtonSize
+                onClick={() => setPizzaSize(pizzaSize)}
                 key={id}
                 productSizes={product.sizes}
                 pizzaSize={pizzaSize}
@@ -30,7 +35,7 @@ function Product({ product, allPizzaSizes }) {
         <div className="containerPrice">
           <div className="productPrice"> от: {product.price} ₴</div>
           <button
-            onClick={() => addProductToBasket(product.id)}
+            onClick={() => addProductToBasket(product.id, pizzaSize)}
             className="productBtnAddCard"
           >
             <div className="containerBtnAddCard">
@@ -41,8 +46,6 @@ function Product({ product, allPizzaSizes }) {
               ) : (
                 ""
               )}
-
-              {/* <span className="productCount"></span> */}
             </div>
           </button>
         </div>

@@ -126,7 +126,6 @@
 .containerProductCount:hover {
   background: #ffffff;
   border: 1px solid #fe5f1e;
-
   color: #fe5f1e;
 }
 
@@ -170,13 +169,3 @@
     max-width: 944px;
   }
 }
-
-/* @media screen and (max-width: 1200px) {
-  .containerProducts {
-    background-color: blue;
-    margin: 0 20px;
-  }
-  .mainContainer {
-    max-width: 1144px;
-  }
-} */

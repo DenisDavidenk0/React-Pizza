@@ -16,6 +16,15 @@ function Basket() {
     FilterProductsContext
   );
 
+  const [quantityPizz, setQuantitypizz] = useState(0);
+
+  useEffect(() => {
+    setQuantitypizz(
+      basket?.reduce((acc, basketCount) => acc + basketCount?.count, 0),
+      0
+    );
+  }, [basket?.count, basket]);
+
   return (
     <>
       <div className="containerHeaderBasket">
@@ -59,7 +68,7 @@ function Basket() {
             </div>
 
             <div className="BasketInfoPanel">
-              <h3>Всего пицц:{basket?.length} </h3>
+              <h3>Всего пицц:{quantityPizz} </h3>
               <h3>Сумма заказа: {totalBasketSum} ₴</h3>
             </div>
             <div

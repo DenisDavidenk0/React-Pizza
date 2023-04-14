@@ -11,7 +11,7 @@ function FilterProductsProvider({ children }) {
   const [basket, setBasket] = useState([]);
   const [totalBasketSum, setTotalBasketSum] = useState(0);
 
-  const addProductToBasket = (productId) => {
+  const addProductToBasket = (productId, pizzaSize) => {
     if (basket?.find((el) => el.id === productId)) {
       // setBasket(
       //   ...basket.map((el) => {
@@ -22,6 +22,7 @@ function FilterProductsProvider({ children }) {
     } else {
       const product = products.find((el) => el.id === productId);
       product.count = 1;
+      product.pizzaSize = pizzaSize;
       basket.push(product);
 
       setBasket([...basket]);
@@ -52,6 +53,17 @@ function FilterProductsProvider({ children }) {
     setBasket([...basket]);
   }
 
+  // function SelectionSizePizza(productId, productSise) {
+  //   products.map((product, productSise) => {
+  //     if(productId == product.id){
+  //       products.sizes.map(productSise){
+
+  //       }
+  //     }
+  //   });
+  //   setProducts([...basket]);
+  // }
+
   useEffect(() => {
     setTotalBasketSum(
       basket?.reduce(
@@ -74,6 +86,7 @@ function FilterProductsProvider({ children }) {
         removeProductFromBasket,
         basketOperation,
         EmptyTrash,
+        // SelectionSizePizza,
       }}
     >
       {children}

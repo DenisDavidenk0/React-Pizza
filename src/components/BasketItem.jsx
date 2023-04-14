@@ -7,6 +7,7 @@ function BasketItem({ product, id }) {
   const { addProductToBasket, basketOperation, removeProductFromBasket } =
     useContext(FilterProductsContext);
 
+  console.log(product);
   return (
     <>
       <div className="containerBasketItem">
@@ -17,7 +18,7 @@ function BasketItem({ product, id }) {
           />
           <div style={{ marginLeft: "15px" }}>
             <h2 className="BasketItemTitlePizza">{product.title}</h2>
-            <h3 className="BasketItemSizePizza">30см</h3>
+            <h3 className="BasketItemSizePizza">{product?.pizzaSize}</h3>
           </div>
         </div>
 
@@ -39,7 +40,9 @@ function BasketItem({ product, id }) {
             +
           </button>
         </div>
-        <h2 className="BasketItemPrice">{product.price * product.count}</h2>
+        <h2 style={{ width: "51px" }} className="BasketItemPrice">
+          {product.price * product.count}
+        </h2>
 
         <button className="deleteItem">
           <span
